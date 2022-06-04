@@ -42,18 +42,31 @@ selecionar('#esquerda').onmouseout = () => {
 
 //botões esquerda e direita ----------------------------------inicio
 
-function esquerda(){
-    let controle = 0
+let controleEsquerda = 0
+
+function esquerda(controleLeft){
     let temporalizador = setInterval(() => {
-        controle -= 10
+        controleEsquerda -= 10
         //console.log(controle)
-        selecionar('#painel').style.left = `${controle}px`
-        if(controle == -680) clearInterval(temporalizador)
+        selecionar('#painel').style.left = `${controleEsquerda}px`
+        if(controleEsquerda == controleLeft) clearInterval(temporalizador)
     })
 }
 
+function funControleEsqeurda(){
+    if(controleEsquerda == 0) {
+        esquerda(-680)
+    }else if(controleEsquerda == -680) {
+        esquerda(-680 * 2)
+    }else if(controleEsquerda == -680 * 2) {
+        esquerda(-680 * 3)
+    }else if(controleEsquerda == -680 * 3) {
+        esquerda(-680 * 4)
+    }
+}
+
 selecionar('#direita').onclick = ()=> alert('direita')
-selecionar('#esquerda').onclick = esquerda
+selecionar('#esquerda').onclick = funControleEsqeurda
 
 //botões esquerda e direita ----------------------------------fim
 
