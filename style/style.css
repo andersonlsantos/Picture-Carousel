@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#corpo{
+    background-color: aliceblue;
+}
+
+#principal{
+    position: relative;
+    /*height: 500px;*/
+    background-color: antiquewhite;
+    overflow: hidden;
+}
+
+.direcionalDireitaEsquerda{
+    position: absolute;
+    /*height: 500px;*/
+    width: 65px;
+    opacity: 0.5;
+    z-index: 10000;
+}
+
+#direita{
+    right: 0px;
+}
+
+#esquerda{
+    left: 0px;
+}
+
+.seta{
+    display: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-left: solid 4px #000000;
+    border-bottom: solid 4px #000000;
+    z-index: 10;
+}
+
+#setaEsquerda{
+    left: 30px;
+    top: 220px;
+    transform: rotate(45deg)
+}
+
+#setaDireita{
+    right: 30px;
+    top: 220px;
+    transform: rotate(-135deg)
+}
+
+#painel{
+    position: absolute;
+    top: 7px;
+    /*border: solid 2px green;*/
+}
+
+.paineis{
+    position: absolute;
+    /*height: 480px;*/
+    border: solid 2px green;
+    font-size: 25px;
+    color: green;
+}
+
+.spPaineis{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: 600;
+}
