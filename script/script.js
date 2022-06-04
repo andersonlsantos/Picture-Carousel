@@ -47,7 +47,7 @@ let controleEsquerda = 0
 function esquerda(controleLeft){
     let temporalizador = setInterval(() => {
         controleEsquerda -= 10
-        //console.log(controle)
+        //console.log(controleEsquerda)
         selecionar('#painel').style.left = `${controleEsquerda}px`
         if(controleEsquerda == controleLeft) clearInterval(temporalizador)
     })
@@ -63,6 +63,21 @@ function funControleEsqeurda(){
     }else if(controleEsquerda == -680 * 3) {
         esquerda(-680 * 4)
     }
+}
+
+let controleDireita = -680 * 4
+
+function direita(controleRight){
+    let temporalizador = setInterval(() => {
+        controleDireita += 10
+        //console.log(controleEsquerda)
+        selecionar('#painel').style.right = `${controleDireita}px`
+        if(controleEsquerda == controleRight) clearInterval(temporalizador)
+    })
+}
+
+function funControleDireita(){
+    
 }
 
 selecionar('#direita').onclick = ()=> alert('direita')
