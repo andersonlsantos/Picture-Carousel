@@ -77,9 +77,11 @@ function posicaoLeftDivPainelId(posicao){
     let listaPosicaoLeftPaineis = []
 
     let controlePainel = 0
-    let controleLargura = 688
+    // let controleLargura = 688
+    let controleLargura = 683
 
-    selecionar('#painelId1').style.left = `${12}px`
+    // selecionar('#painelId1').style.left = `${12}px`
+    selecionar('#painelId1').style.left = `${3}px`
 
     for(let g = 1366; g > 0; g--){
         controleLargura -= 0.5
