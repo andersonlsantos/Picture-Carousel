@@ -42,45 +42,51 @@ selecionar('#esquerda').onmouseout = () => {
 
 //botões esquerda e direita ----------------------------------inicio
 
-let controleEsquerda = 0
+let controleEsquerdaDireita = 0
 
 function esquerda(controleLeft){
     let temporalizador = setInterval(() => {
-        controleEsquerda -= 10
+        controleEsquerdaDireita -= 10
         //console.log(controleEsquerda)
-        selecionar('#painel').style.left = `${controleEsquerda}px`
-        if(controleEsquerda == controleLeft) clearInterval(temporalizador)
+        selecionar('#painel').style.left = `${controleEsquerdaDireita}px`
+        if(controleEsquerdaDireita == controleLeft) clearInterval(temporalizador)
     })
 }
 
 function funControleEsqeurda(){
-    if(controleEsquerda == 0) {
+    if(controleEsquerdaDireita == 0) {
         esquerda(-680)
-    }else if(controleEsquerda == -680) {
+    }else if(controleEsquerdaDireita == -680) {
         esquerda(-680 * 2)
-    }else if(controleEsquerda == -680 * 2) {
+    }else if(controleEsquerdaDireita == -680 * 2) {
         esquerda(-680 * 3)
-    }else if(controleEsquerda == -680 * 3) {
+    }else if(controleEsquerdaDireita == -680 * 3) {
         esquerda(-680 * 4)
     }
 }
 
-let controleDireita = -680 * 4
-
 function direita(controleRight){
-    let temporalizador = setInterval(() => {
-        controleDireita += 10
+    let temporalizador2 = setInterval(() => {
+        controleEsquerdaDireita += 10
         //console.log(controleEsquerda)
-        selecionar('#painel').style.right = `${controleDireita}px`
-        if(controleEsquerda == controleRight) clearInterval(temporalizador)
+        selecionar('#painel').style.left = `${controleEsquerdaDireita}px`
+        if(controleEsquerdaDireita == controleRight) clearInterval(temporalizador2)
     })
 }
 
 function funControleDireita(){
-    
+    if(controleEsquerdaDireita == -680){
+        direita(0)
+    }else if(controleEsquerdaDireita == -680 * 2){
+        direita(-680)
+    }else if(controleEsquerdaDireita == -680 * 3){
+        direita(-680 * 2)
+    }else if(controleEsquerdaDireita == -680 * 4){
+        direita(-680 * 3)
+    }
 }
 
-selecionar('#direita').onclick = ()=> alert('direita')
+selecionar('#direita').onclick = funControleDireita
 selecionar('#esquerda').onclick = funControleEsqeurda
 
 //botões esquerda e direita ----------------------------------fim
