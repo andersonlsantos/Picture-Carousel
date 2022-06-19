@@ -44,9 +44,9 @@ selecionar('#esquerda').onmouseout = () => {
 
 function controleDistanciaPaineis(){
     let listaDistanciLeft = []
-    let distanciaLeft = -690
-    for(let i = 1366; i > 0; i -= 10){
-        distanciaLeft += 10
+    let distanciaLeft = -682
+    for(let i = 1366; i > 0; i -= 2){
+        distanciaLeft += 2
         listaDistanciLeft.push([i, distanciaLeft])
     }
     for(let e = 0; e < listaDistanciLeft.length; e++){
@@ -54,82 +54,86 @@ function controleDistanciaPaineis(){
     }
 }
 
-// console.log(controleDistanciaPaineis())
+//console.log(controleDistanciaPaineis())
 
 //controle dinamico da distancia entre as class paineis conforme a largura da pagina--------------fim
 
 //botões esquerda e direita ----------------------------------inicio
 
-let controleEsquerdaDireita = 0
+if(largura == 1366){
 
-function esquerda(controleLeft){
-    let temporalizador = setInterval(() => {
-        controleEsquerdaDireita -= 10
-        //console.log(controleEsquerda)
-        selecionar('#painel').style.left = `${controleEsquerdaDireita}px`
-        if(controleEsquerdaDireita == controleLeft) clearInterval(temporalizador)
-    })
-}
+    let controleEsquerdaDireita = 0
 
-function funControleEsqeurda(){
-    if(controleEsquerdaDireita == 0) {
-        esquerda(controleDistanciaPaineis())
-    }else if(controleEsquerdaDireita == controleDistanciaPaineis()) {
-        esquerda(controleDistanciaPaineis() * 2)
-    }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 2) {
-        esquerda(controleDistanciaPaineis() * 3)
-    }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 3) {
-        esquerda(controleDistanciaPaineis() * 4)
+    function esquerda(controleLeft){
+        let temporalizador = setInterval(() => {
+            controleEsquerdaDireita -= 10
+            //console.log(controleEsquerda)
+            selecionar('#painel').style.left = `${controleEsquerdaDireita}px`
+            if(controleEsquerdaDireita == controleLeft) clearInterval(temporalizador)
+        })
     }
-}
 
-// function funControleEsqeurda(){
-//     if(controleEsquerdaDireita == 0) {
-//         esquerda(-680)
-//     }else if(controleEsquerdaDireita == -680) {
-//         esquerda(-680 * 2)
-//     }else if(controleEsquerdaDireita == -680 * 2) {
-//         esquerda(-680 * 3)
-//     }else if(controleEsquerdaDireita == -680 * 3) {
-//         esquerda(-680 * 4)
-//     }
-// }
+    // function funControleEsqeurda(){
+    //     if(controleEsquerdaDireita == 0) {
+    //         esquerda(controleDistanciaPaineis())
+    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis()) {
+    //         esquerda(controleDistanciaPaineis() * 2)
+    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 2) {
+    //         esquerda(controleDistanciaPaineis() * 3)
+    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 3) {
+    //         esquerda(controleDistanciaPaineis() * 4)
+    //     }
+    // }
 
-function direita(controleRight){
-    let temporalizador2 = setInterval(() => {
-        controleEsquerdaDireita += 10
-        //console.log(controleEsquerda)
-        selecionar('#painel').style.left = `${controleEsquerdaDireita}px`
-        if(controleEsquerdaDireita == controleRight) clearInterval(temporalizador2)
-    })
-}
-
-function funControleDireita(){
-    if(controleEsquerdaDireita == controleDistanciaPaineis()){
-        direita(0)
-    }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 2){
-        direita(controleDistanciaPaineis())
-    }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 3){
-        direita(controleDistanciaPaineis() * 2)
-    }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 4){
-        direita(controleDistanciaPaineis() * 3)
+    function funControleEsqeurda(){
+        if(controleEsquerdaDireita == 0) {
+            esquerda(-680)
+        }else if(controleEsquerdaDireita == -680) {
+            esquerda(-680 * 2)
+        }else if(controleEsquerdaDireita == -680 * 2) {
+            esquerda(-680 * 3)
+        }else if(controleEsquerdaDireita == -680 * 3) {
+            esquerda(-680 * 4)
+        }
     }
+
+    function direita(controleRight){
+        let temporalizador2 = setInterval(() => {
+            controleEsquerdaDireita += 10
+            //console.log(controleEsquerda)
+            selecionar('#painel').style.left = `${controleEsquerdaDireita}px`
+            if(controleEsquerdaDireita == controleRight) clearInterval(temporalizador2)
+        })
+    }
+
+    // function funControleDireita(){
+    //     if(controleEsquerdaDireita == controleDistanciaPaineis()){
+    //         direita(0)
+    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 2){
+    //         direita(controleDistanciaPaineis())
+    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 3){
+    //         direita(controleDistanciaPaineis() * 2)
+    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 4){
+    //         direita(controleDistanciaPaineis() * 3)
+    //     }
+    // }
+
+    function funControleDireita(){
+        if(controleEsquerdaDireita == -680){
+            direita(0)
+        }else if(controleEsquerdaDireita == -680 * 2){
+            direita(-680)
+        }else if(controleEsquerdaDireita == -680 * 3){
+            direita(-680 * 2)
+        }else if(controleEsquerdaDireita == -680 * 4){
+            direita(-680 * 3)
+        }
+    }
+
+    selecionar('#direita').onclick = funControleDireita
+    selecionar('#esquerda').onclick = funControleEsqeurda
+
 }
-
-// function funControleDireita(){
-//     if(controleEsquerdaDireita == -680){
-//         direita(0)
-//     }else if(controleEsquerdaDireita == -680 * 2){
-//         direita(-680)
-//     }else if(controleEsquerdaDireita == -680 * 3){
-//         direita(-680 * 2)
-//     }else if(controleEsquerdaDireita == -680 * 4){
-//         direita(-680 * 3)
-//     }
-// }
-
-selecionar('#direita').onclick = funControleDireita
-selecionar('#esquerda').onclick = funControleEsqeurda
 
 //botões esquerda e direita ----------------------------------fim
 
