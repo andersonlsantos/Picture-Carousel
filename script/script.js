@@ -55,19 +55,15 @@ if(largura == 1366){
         })
     }
 
-    const numero = (a = -680) =>{
-        return a
-    }
-
-    function funControleEsqeurda(){
+    function funControleEsqeurda(numero){
         if(controleEsquerdaDireita == 0) {
-            esquerda(numero())
-        }else if(controleEsquerdaDireita == numero()) {
-            esquerda(numero() * 2)
-        }else if(controleEsquerdaDireita == numero() * 2) {
-            esquerda(numero() * 3)
-        }else if(controleEsquerdaDireita == numero() * 3) {
-            esquerda(numero() * 4)
+            esquerda(numero)
+        }else if(controleEsquerdaDireita == numero) {
+            esquerda(numero * 2)
+        }else if(controleEsquerdaDireita == numero * 2) {
+            esquerda(numero * 3)
+        }else if(controleEsquerdaDireita == numero * 3) {
+            esquerda(numero * 4)
         }
     }
 
@@ -80,20 +76,32 @@ if(largura == 1366){
         })
     }
 
-    function funControleDireita(){
-        if(controleEsquerdaDireita == numero()){
+    function funControleDireita(numero){
+        if(controleEsquerdaDireita == numero){
             direita(0)
-        }else if(controleEsquerdaDireita == numero() * 2){
-            direita(numero())
-        }else if(controleEsquerdaDireita == numero() * 3){
-            direita(numero() * 2)
-        }else if(controleEsquerdaDireita == numero() * 4){
-            direita(numero() * 3)
+        }else if(controleEsquerdaDireita == numero * 2){
+            direita(numero)
+        }else if(controleEsquerdaDireita == numero * 3){
+            direita(numero * 2)
+        }else if(controleEsquerdaDireita == numero * 4){
+            direita(numero * 3)
         }
     }
 
-    selecionar('#direita').onclick = funControleDireita
-    selecionar('#esquerda').onclick = funControleEsqeurda
+    const numm = (a = -680) =>{
+         return a
+    }
+
+    function controleDireita(){
+        return funControleDireita(numm())
+    }
+
+    function controleEsquerda(){
+        return funControleEsqeurda(numm())
+    }
+
+    selecionar('#direita').onclick = controleDireita
+    selecionar('#esquerda').onclick = controleEsquerda
 
 }
 
@@ -216,6 +224,15 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
 
     const alt = window.innerHeight
     const larg = window.innerWidth //1366
+
+    //botões esquerda e direita (responsivo) ----------------------------------inicio
+
+    if(larg == 1366){
+        selecionar('#direita').onclick = controleDireita
+        selecionar('#esquerda').onclick = controleEsquerda
+    }
+
+    //botões esquerda e direita (responsivo) ----------------------------------fim
 
     // controle de altura div principal abaixo 1366px------inicio
 
