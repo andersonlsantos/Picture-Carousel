@@ -227,6 +227,66 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
 
     //botões esquerda e direita (responsivo) ----------------------------------inicio
 
+    // bloco repetido (#trabalhar mais tarde para otimizar esse bloco repetido) --------------------- inicio
+
+    let controleEsquerdaDireita = 0
+
+    function esquerda(controleLeft, qtdDeslocamento = 10){
+        let temporalizador = setInterval(() => {
+            controleEsquerdaDireita -= qtdDeslocamento
+            //console.log(controleEsquerda)
+            selecionar('#painel').style.left = `${controleEsquerdaDireita}px`
+            if(controleEsquerdaDireita == controleLeft) clearInterval(temporalizador)
+        })
+    }
+
+    function funControleEsqeurda(numero){
+        if(controleEsquerdaDireita == 0) {
+            esquerda(numero)
+        }else if(controleEsquerdaDireita == numero) {
+            esquerda(numero * 2)
+        }else if(controleEsquerdaDireita == numero * 2) {
+            esquerda(numero * 3)
+        }else if(controleEsquerdaDireita == numero * 3) {
+            esquerda(numero * 4)
+        }
+    }
+
+    function direita(controleRight, qtdDeslocamento = 10){
+        let temporalizador2 = setInterval(() => {
+            controleEsquerdaDireita += qtdDeslocamento
+            //console.log(controleEsquerda)
+            selecionar('#painel').style.left = `${controleEsquerdaDireita}px`
+            if(controleEsquerdaDireita == controleRight) clearInterval(temporalizador2)
+        })
+    }
+
+    function funControleDireita(numero){
+        if(controleEsquerdaDireita == numero){
+            direita(0)
+        }else if(controleEsquerdaDireita == numero * 2){
+            direita(numero)
+        }else if(controleEsquerdaDireita == numero * 3){
+            direita(numero * 2)
+        }else if(controleEsquerdaDireita == numero * 4){
+            direita(numero * 3)
+        }
+    }
+
+    const numm = (a = -680) =>{
+         return a
+    }
+
+    function controleDireita(){
+        return funControleDireita(numm())
+    }
+
+    function controleEsquerda(){
+        return funControleEsqeurda(numm())
+    }
+
+    // bloco repetido (#trabalhar mais tarde para otimizar esse bloco repetido) --------------------- fim
+
     if(larg == 1366){
         selecionar('#direita').onclick = controleDireita
         selecionar('#esquerda').onclick = controleEsquerda
