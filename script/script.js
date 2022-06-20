@@ -40,93 +40,55 @@ selecionar('#esquerda').onmouseout = () => {
 //botão divs direita, esquerda, setaDireita, setaEsquerda aparece quando o mouse passa e desaparece 
 //quando o mouse sai --- fim
 
-//controle dinamico da distancia entre as class paineis conforme a largura da pagina--------------inicio
-
-function controleDistanciaPaineis(){
-    let listaDistanciLeft = []
-    let distanciaLeft = -682
-    for(let i = 1366; i > 0; i -= 2){
-        distanciaLeft += 2
-        listaDistanciLeft.push([i, distanciaLeft])
-    }
-    for(let e = 0; e < listaDistanciLeft.length; e++){
-        if(listaDistanciLeft[e][0] == largura || listaDistanciLeft[e][0] < largura) return listaDistanciLeft[e][1]
-    }
-}
-
-//console.log(controleDistanciaPaineis())
-
-//controle dinamico da distancia entre as class paineis conforme a largura da pagina--------------fim
-
 //botões esquerda e direita ----------------------------------inicio
 
 if(largura == 1366){
 
     let controleEsquerdaDireita = 0
 
-    function esquerda(controleLeft){
+    function esquerda(controleLeft, qtdDeslocamento = 10){
         let temporalizador = setInterval(() => {
-            controleEsquerdaDireita -= 10
+            controleEsquerdaDireita -= qtdDeslocamento
             //console.log(controleEsquerda)
             selecionar('#painel').style.left = `${controleEsquerdaDireita}px`
             if(controleEsquerdaDireita == controleLeft) clearInterval(temporalizador)
         })
     }
 
-    // function funControleEsqeurda(){
-    //     if(controleEsquerdaDireita == 0) {
-    //         esquerda(controleDistanciaPaineis())
-    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis()) {
-    //         esquerda(controleDistanciaPaineis() * 2)
-    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 2) {
-    //         esquerda(controleDistanciaPaineis() * 3)
-    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 3) {
-    //         esquerda(controleDistanciaPaineis() * 4)
-    //     }
-    // }
+    const numero = (a = -680) =>{
+        return a
+    }
 
     function funControleEsqeurda(){
         if(controleEsquerdaDireita == 0) {
-            esquerda(-680)
-        }else if(controleEsquerdaDireita == -680) {
-            esquerda(-680 * 2)
-        }else if(controleEsquerdaDireita == -680 * 2) {
-            esquerda(-680 * 3)
-        }else if(controleEsquerdaDireita == -680 * 3) {
-            esquerda(-680 * 4)
+            esquerda(numero())
+        }else if(controleEsquerdaDireita == numero()) {
+            esquerda(numero() * 2)
+        }else if(controleEsquerdaDireita == numero() * 2) {
+            esquerda(numero() * 3)
+        }else if(controleEsquerdaDireita == numero() * 3) {
+            esquerda(numero() * 4)
         }
     }
 
-    function direita(controleRight){
+    function direita(controleRight, qtdDeslocamento = 10){
         let temporalizador2 = setInterval(() => {
-            controleEsquerdaDireita += 10
+            controleEsquerdaDireita += qtdDeslocamento
             //console.log(controleEsquerda)
             selecionar('#painel').style.left = `${controleEsquerdaDireita}px`
             if(controleEsquerdaDireita == controleRight) clearInterval(temporalizador2)
         })
     }
 
-    // function funControleDireita(){
-    //     if(controleEsquerdaDireita == controleDistanciaPaineis()){
-    //         direita(0)
-    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 2){
-    //         direita(controleDistanciaPaineis())
-    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 3){
-    //         direita(controleDistanciaPaineis() * 2)
-    //     }else if(controleEsquerdaDireita == controleDistanciaPaineis() * 4){
-    //         direita(controleDistanciaPaineis() * 3)
-    //     }
-    // }
-
     function funControleDireita(){
-        if(controleEsquerdaDireita == -680){
+        if(controleEsquerdaDireita == numero()){
             direita(0)
-        }else if(controleEsquerdaDireita == -680 * 2){
-            direita(-680)
-        }else if(controleEsquerdaDireita == -680 * 3){
-            direita(-680 * 2)
-        }else if(controleEsquerdaDireita == -680 * 4){
-            direita(-680 * 3)
+        }else if(controleEsquerdaDireita == numero() * 2){
+            direita(numero())
+        }else if(controleEsquerdaDireita == numero() * 3){
+            direita(numero() * 2)
+        }else if(controleEsquerdaDireita == numero() * 4){
+            direita(numero() * 3)
         }
     }
 
