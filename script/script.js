@@ -227,7 +227,7 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
 
     //botões esquerda e direita (responsivo) ----------------------------------inicio
 
-    // bloco repetido (#trabalhar mais tarde para otimizar esse bloco repetido) --------------------- inicio
+    // botões esquerda e direita (bloco repetido #trabalhar mais tarde para otimizar esse bloco repetido) --------------------- inicio
 
     let controleEsquerdaDireita = 0
 
@@ -285,12 +285,20 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
         return funControleEsqeurda(numm())
     }
 
-    // bloco repetido (#trabalhar mais tarde para otimizar esse bloco repetido) --------------------- fim
+    // botões esquerda e direita (bloco repetido #trabalhar mais tarde para otimizar esse bloco repetido) --------------------- fim
 
     if(larg == 1366){
         selecionar('#direita').onclick = controleDireita
         selecionar('#esquerda').onclick = controleEsquerda
     }
+
+    function testeControleRighLeft(){
+        for(let i = 1366; i > 0; i--){
+            console.log(i, i / 10)
+        }
+    }
+
+    testeControleRighLeft()
 
     //botões esquerda e direita (responsivo) ----------------------------------fim
 
