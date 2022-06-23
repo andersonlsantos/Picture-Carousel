@@ -292,13 +292,31 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
         selecionar('#esquerda').onclick = controleEsquerda
     }
 
-    function testeControleRighLeft(){
-        for(let i = 1366; i > 0; i--){
-            console.log(i, i / 10)
+    function funControleRighLeft(){
+        let lista = []
+
+        for(let e = 1; e < 10; e++){
+            lista.push(parseFloat(`${10}.${0}${e}`))
         }
+
+        for(let t = 10; t < 100; t++){
+            lista.push(parseFloat(`${10}.${t}`))
+        }
+
+        return lista
     }
 
-    testeControleRighLeft()
+    function funControleRighLeft2(){
+        let lista = []
+
+        for(let i = -1366; i < -400; i++){
+            lista.push(i)
+        }
+
+        return lista
+    }
+
+    console.log(funControleRighLeft(), funControleRighLeft2())
 
     //botões esquerda e direita (responsivo) ----------------------------------fim
 
