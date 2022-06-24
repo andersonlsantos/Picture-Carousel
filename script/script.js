@@ -253,7 +253,7 @@ function funControleRighLeft3(){
     return lista
 }
 
-// console.log(funControleRighLeft3())
+let listaFunControleRighLeft3 = funControleRighLeft3()
 
 // funControleRighLeft ---------------------------------- fim
 
@@ -327,12 +327,14 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
         return funControleEsqeurda(numm())
     }
 
-    // botões esquerda e direita (bloco repetido #trabalhar mais tarde para otimizar esse bloco repetido) --------------------- fim
+    console.log(listaFunControleRighLeft3)
 
     if(larg == 1366){
         selecionar('#direita').onclick = controleDireita
         selecionar('#esquerda').onclick = controleEsquerda
     }
+
+    // botões esquerda e direita (bloco repetido #trabalhar mais tarde para otimizar esse bloco repetido) --------------------- fim
 
     //botões esquerda e direita (responsivo) ----------------------------------fim
 
