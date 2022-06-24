@@ -215,6 +215,48 @@ for(let t = 0; t < lisatSetaDireitaEsquerda.length; t++){
 
 // controle de altlura (centralizando) divs setaDireita e setaEsquerda --- fim
 
+// funControleRighLeft ---------------------------------- inicio
+
+function funControleRighLeft(){
+    let lista = [0]
+
+    for(let e = 1; e < 10; e++){
+        lista.push(parseFloat(`${10}.${0}${e}`))
+    }
+
+    for(let t = 10; t < 100; t++){
+        lista.push(parseFloat(`${10}.${t}`))
+    }
+
+    return lista
+}
+
+function funControleRighLeft2(){
+    let lista = []
+
+    for(let i = -1366; i < -400; i++){
+        lista.push(i)
+    }
+
+    return lista
+}
+
+function funControleRighLeft3(){
+    let lista = []
+    for(let i = 0; i < funControleRighLeft2().length; i++){
+        for(let e = 0; e < funControleRighLeft().length; e++){
+            if(funControleRighLeft2()[i] % funControleRighLeft()[e] == 0){
+                lista.push([funControleRighLeft2()[i], funControleRighLeft()[e]])
+            }
+        }
+    }
+    return lista
+}
+
+// console.log(funControleRighLeft3())
+
+// funControleRighLeft ---------------------------------- fim
+
 //controle de responsividade da altura da div principal e suas divs e class filhas, abaixo de 1366px---inicio
 
 function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
@@ -291,32 +333,6 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
         selecionar('#direita').onclick = controleDireita
         selecionar('#esquerda').onclick = controleEsquerda
     }
-
-    function funControleRighLeft(){
-        let lista = []
-
-        for(let e = 1; e < 10; e++){
-            lista.push(parseFloat(`${10}.${0}${e}`))
-        }
-
-        for(let t = 10; t < 100; t++){
-            lista.push(parseFloat(`${10}.${t}`))
-        }
-
-        return lista
-    }
-
-    function funControleRighLeft2(){
-        let lista = []
-
-        for(let i = -1366; i < -400; i++){
-            lista.push(i)
-        }
-
-        return lista
-    }
-
-    console.log(funControleRighLeft(), funControleRighLeft2())
 
     //botões esquerda e direita (responsivo) ----------------------------------fim
 
