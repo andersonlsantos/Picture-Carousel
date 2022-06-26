@@ -234,7 +234,7 @@ function funControleRighLeft(){
 function funControleRighLeft2(){
     let lista = []
 
-    for(let i = -1366; i < -400; i++){
+    for(let i = -680; i < 0; i++){
         lista.push(i)
     }
 
@@ -242,6 +242,16 @@ function funControleRighLeft2(){
 }
 
 function funControleRighLeft3(){
+    let lista = []
+
+    for(let i = 1366; i > 0; i++){
+        lista.push(i)
+    }
+
+    return lista
+}
+
+function funControleRighLeft4(){
     let lista = []
     for(let i = 0; i < funControleRighLeft2().length; i++){
         for(let e = 0; e < funControleRighLeft().length; e++){
@@ -320,19 +330,18 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
     }
 
     function controleDireita(){
-        return funControleDireita(numm())
+        if(larg == 1366) return funControleDireita(numm())
     }
 
     function controleEsquerda(){
-        return funControleEsqeurda(numm())
+        if(larg == 1366) return funControleEsqeurda(numm())
     }
 
-    console.log(listaFunControleRighLeft3)
-
-    if(larg == 1366){
-        selecionar('#direita').onclick = controleDireita
-        selecionar('#esquerda').onclick = controleEsquerda
-    }
+    //
+    
+    selecionar('#direita').onclick = controleDireita
+    selecionar('#esquerda').onclick = controleEsquerda
+    
 
     // botões esquerda e direita (bloco repetido #trabalhar mais tarde para otimizar esse bloco repetido) --------------------- fim
 
