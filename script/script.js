@@ -263,7 +263,9 @@ function funControleRighLeft4(){
     return lista
 }
 
-let listaFunControleRighLeft3 = funControleRighLeft3()
+let listaFunControleRighLeft4 = funControleRighLeft4()
+
+console.log(listaFunControleRighLeft4)
 
 // funControleRighLeft ---------------------------------- fim
 
