@@ -241,16 +241,6 @@ function funControleRighLeft2(){
     return lista
 }
 
-function funControleRighLeft3(){
-    let lista = []
-
-    for(let i = 1366; i > 0; i++){
-        lista.push(i)
-    }
-
-    return lista
-}
-
 function funControleRighLeft4(){
     let lista = []
     for(let i = 0; i < funControleRighLeft2().length; i++){
@@ -263,9 +253,34 @@ function funControleRighLeft4(){
     return lista
 }
 
+function funControleRighLeft3(){
+    let lista = []
+
+    for(let i = 1366; i > 700; i--){
+        lista.push(i)
+    }
+
+    return lista
+}
+
+function funControleRighLeft5(){
+    let lista = []
+
+    for(let i = 0; i < funControleRighLeft3().length; i++){
+        for(let e = 0; e < funControleRighLeft().length; e++){
+            if(funControleRighLeft3()[i] % funControleRighLeft()[e] == 0){
+                lista.push(funControleRighLeft3()[i])
+            }
+        }
+    }
+    return lista
+}
+
 let listaFunControleRighLeft4 = funControleRighLeft4()
 
-console.log(listaFunControleRighLeft4)
+let listaFunControleRighLeft5 = funControleRighLeft5()
+
+console.log(listaFunControleRighLeft4, listaFunControleRighLeft5)
 
 // funControleRighLeft ---------------------------------- fim
 
