@@ -280,7 +280,6 @@ let listaFunControleRighLeft4 = funControleRighLeft4()
 
 let listaFunControleRighLeft5 = funControleRighLeft5()
 
-
 // funControleRighLeft ---------------------------------- fim
 
 //controle de responsividade da altura da div principal e suas divs e class filhas, abaixo de 1366px---inicio
@@ -341,20 +340,24 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
         }
     }
 
-    const numm = (a = -680, b = 10) =>{
+    const numm = (a , b) =>{
          return [a, b]
     }
 
     function controleDireita(){
-        if(larg == 1366) return funControleDireita(numm()[0], numm()[1])
+        if(larg == 1366) return funControleDireita(numm(-680, 10)[0], numm(-680, 10)[1])
 
         // for(let i = 0; listaFunControleRighLeft5.length; i++){
-        //     if(larg == listaFunControleRighLeft5[i]) return funControleDireita(numm()[0], numm()[1])
+        //     if(larg == listaFunControleRighLeft5[i]) return funControleDireita(numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[0], numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[1])
         // }
     }
 
     function controleEsquerda(){
-        if(larg == 1366) return funControleEsqeurda(numm()[0], numm()[1])
+        if(larg == 1366) return funControleEsqeurda(numm(-680, 10)[0], numm(-680, 10)[1])
+
+        // for(let i = 0; listaFunControleRighLeft5.length; i++){
+        //     if(larg == listaFunControleRighLeft5[i]) return funControleDireita(numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[0], numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[1])
+        // }
     }
 
     //
