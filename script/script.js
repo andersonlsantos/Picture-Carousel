@@ -280,7 +280,6 @@ let listaFunControleRighLeft4 = funControleRighLeft4()
 
 let listaFunControleRighLeft5 = funControleRighLeft5()
 
-console.log(listaFunControleRighLeft4, listaFunControleRighLeft5)
 
 // funControleRighLeft ---------------------------------- fim
 
@@ -300,7 +299,7 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
 
     let controleEsquerdaDireita = 0
 
-    function esquerda(controleLeft, qtdDeslocamento = 10){
+    function esquerda(controleLeft, qtdDeslocamento){
         let temporalizador = setInterval(() => {
             controleEsquerdaDireita -= qtdDeslocamento
             //console.log(controleEsquerda)
@@ -309,19 +308,19 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
         })
     }
 
-    function funControleEsqeurda(numero){
+    function funControleEsqeurda(numero, numeroB){
         if(controleEsquerdaDireita == 0) {
-            esquerda(numero)
+            esquerda(numero, numeroB)
         }else if(controleEsquerdaDireita == numero) {
-            esquerda(numero * 2)
+            esquerda(numero * 2, numeroB)
         }else if(controleEsquerdaDireita == numero * 2) {
-            esquerda(numero * 3)
+            esquerda(numero * 3, numeroB)
         }else if(controleEsquerdaDireita == numero * 3) {
-            esquerda(numero * 4)
+            esquerda(numero * 4, numeroB)
         }
     }
 
-    function direita(controleRight, qtdDeslocamento = 10){
+    function direita(controleRight, qtdDeslocamento){
         let temporalizador2 = setInterval(() => {
             controleEsquerdaDireita += qtdDeslocamento
             //console.log(controleEsquerda)
@@ -330,28 +329,32 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
         })
     }
 
-    function funControleDireita(numero){
+    function funControleDireita(numero, numeroB){
         if(controleEsquerdaDireita == numero){
-            direita(0)
+            direita(0, numeroB)
         }else if(controleEsquerdaDireita == numero * 2){
-            direita(numero)
+            direita(numero, numeroB)
         }else if(controleEsquerdaDireita == numero * 3){
-            direita(numero * 2)
+            direita(numero * 2, numeroB)
         }else if(controleEsquerdaDireita == numero * 4){
-            direita(numero * 3)
+            direita(numero * 3, numeroB)
         }
     }
 
-    const numm = (a = -680) =>{
-         return a
+    const numm = (a = -680, b = 10) =>{
+         return [a, b]
     }
 
     function controleDireita(){
-        if(larg == 1366) return funControleDireita(numm())
+        if(larg == 1366) return funControleDireita(numm()[0], numm()[1])
+
+        // for(let i = 0; listaFunControleRighLeft5.length; i++){
+        //     if(larg == listaFunControleRighLeft5[i]) return funControleDireita(numm()[0], numm()[1])
+        // }
     }
 
     function controleEsquerda(){
-        if(larg == 1366) return funControleEsqeurda(numm())
+        if(larg == 1366) return funControleEsqeurda(numm()[0], numm()[1])
     }
 
     //
