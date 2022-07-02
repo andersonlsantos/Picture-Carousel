@@ -347,17 +347,19 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
     function controleDireita(){
         if(larg == 1366) return funControleDireita(numm(-680, 10)[0], numm(-680, 10)[1])
 
-        // for(let i = 0; listaFunControleRighLeft5.length; i++){
-        //     if(larg == listaFunControleRighLeft5[i]) return funControleDireita(numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[0], numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[1])
-        // }
+        for(let i = 0; i < listaFunControleRighLeft5.length; i++){
+            if(larg <= listaFunControleRighLeft5[i]) return funControleDireita(numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[0], numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[1])
+        }
+
+        // talvez esse processamento deva ser processado primeiro do lado de fora dessa função
     }
 
     function controleEsquerda(){
         if(larg == 1366) return funControleEsqeurda(numm(-680, 10)[0], numm(-680, 10)[1])
 
-        // for(let i = 0; listaFunControleRighLeft5.length; i++){
-        //     if(larg == listaFunControleRighLeft5[i]) return funControleDireita(numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[0], numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[1])
-        // }
+         for(let i = 0; i < listaFunControleRighLeft5.length; i++){
+             if(larg <= listaFunControleRighLeft5[i]) return funControleDireita(numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[0], numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[1])
+         }
     }
 
     //
