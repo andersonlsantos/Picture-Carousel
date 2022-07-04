@@ -280,6 +280,8 @@ let listaFunControleRighLeft4 = funControleRighLeft4()
 
 let listaFunControleRighLeft5 = funControleRighLeft5()
 
+// console.log(listaFunControleRighLeft4, listaFunControleRighLeft5)
+
 // funControleRighLeft ---------------------------------- fim
 
 //controle de responsividade da altura da div principal e suas divs e class filhas, abaixo de 1366px---inicio
@@ -342,23 +344,28 @@ function controleTamanhoIdPrincipalClassDirecionalDireitaEsquerda(){
 
     const numm = (a , b) =>{
          return [a, b]
+
+         // talvez toda a combinação deva ser feita aqui dentro
     }
 
     function controleDireita(){
         if(larg == 1366) return funControleDireita(numm(-680, 10)[0], numm(-680, 10)[1])
 
         for(let i = 0; i < listaFunControleRighLeft5.length; i++){
-            if(larg <= listaFunControleRighLeft5[i]) return funControleDireita(numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[0], numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[1])
+            if(larg == listaFunControleRighLeft5[i]) {
+                return funControleDireita(numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[0], numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[1])
+            }
         }
 
-        // talvez esse processamento deva ser processado primeiro do lado de fora dessa função
     }
 
     function controleEsquerda(){
         if(larg == 1366) return funControleEsqeurda(numm(-680, 10)[0], numm(-680, 10)[1])
 
          for(let i = 0; i < listaFunControleRighLeft5.length; i++){
-             if(larg <= listaFunControleRighLeft5[i]) return funControleDireita(numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[0], numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[1])
+             if(larg == listaFunControleRighLeft5[i]) {
+                return funControleDireita(numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[0], numm(listaFunControleRighLeft4[i][0], listaFunControleRighLeft4[i][1])[1])
+             }
          }
     }
 
